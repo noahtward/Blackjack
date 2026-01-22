@@ -27,7 +27,9 @@ public class Main {
             switch (scanner.nextInt()) {
                 case 1: //Hit
                     playerHand.addCardToHand(deck, rng);
+                    System.out.println("------------------");
                     printPlayerHand(playerHand, showDeck);
+                    printDealerHand(dealerHand, showDeck);
                     break;
                 case 2: //Stand
                     isPlayerTurn = false;
@@ -52,11 +54,15 @@ public class Main {
         System.out.println("Your hand:");
         playerHand.displayHand(showDeck);
         System.out.println();
+        System.out.println(playerHand.getHandValue(showDeck) + " showing");
+        System.out.println();
     }
 
     static void printDealerHand(Hand dealerHand, boolean showDeck) {
         System.out.println("Dealer's hand:");
         dealerHand.displayHand(showDeck);
+        System.out.println();
+        System.out.println(dealerHand.getHandValue(showDeck) + " showing");
         System.out.println();
     }
     

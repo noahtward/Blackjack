@@ -12,4 +12,8 @@ public class Card {
         return rank.getDisplayName() + suit.getDisplayName();
     }
 
+    public int getValue() {
+        return rank.getValue();
+    }
+
 }
