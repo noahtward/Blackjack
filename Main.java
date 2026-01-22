@@ -29,7 +29,7 @@ public class Main {
                     playerHand.addCardToHand(deck, rng);
                     System.out.println("------------------");
                     printPlayerHand(playerHand, showDeck);
-                    printDealerHand(dealerHand, showDeck);
+                    printDealerHand(dealerHand, !showDeck); //use !showDeck here because this is still the player's turn
                     break;
                 case 2: //Stand
                     isPlayerTurn = false;
@@ -50,7 +50,7 @@ public class Main {
     //     }
     // }
     
-    static void printPlayerHand(Hand playerHand, boolean showDeck) {
+    static void printPlayerHand(Hand playerHand, boolean showDeck) { //displays the player's hand of cards
         System.out.println("Your hand:");
         playerHand.displayHand(showDeck);
         System.out.println();
@@ -58,7 +58,7 @@ public class Main {
         System.out.println();
     }
 
-    static void printDealerHand(Hand dealerHand, boolean showDeck) {
+    static void printDealerHand(Hand dealerHand, boolean showDeck) { // displays the dealers hand of cards
         System.out.println("Dealer's hand:");
         dealerHand.displayHand(showDeck);
         System.out.println();

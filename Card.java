@@ -8,11 +8,11 @@ public class Card {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //returns the card as a string e.g. 5♧ or A♢
         return rank.getDisplayName() + suit.getDisplayName();
     }
 
-    public int getValue() {
+    public int getValue() { //returns the value of the card, gets it from the rank
         return rank.getValue();
     }
 

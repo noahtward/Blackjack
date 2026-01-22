@@ -15,9 +15,9 @@ public class Hand {
     }
 
     public void displayHand(boolean showDeck) { //Displays the cards currently in the hand
-        if (!showDeck) {
+        if (!showDeck) { //only show first card at index 0
             System.out.print(hand.get(0).toString() + " ");
-        } else {
+        } else { // shows all cards in hand
             for (int i = 0; i < hand.size(); ++i) {
                 System.out.print(hand.get(i).toString() + " ");
             }
@@ -25,15 +25,15 @@ public class Hand {
         
     }
 
-    public void addCardToHand(Deck deck, Random rng) {
+    public void addCardToHand(Deck deck, Random rng) { //gets a random card from the deck and adds it to hand
         hand.add(deck.getCard(rng.nextInt(deck.getDeckLength())));
-        handValue += hand.get(hand.size() - 1).getValue();
+        handValue += hand.get(hand.size() - 1).getValue(); //add value of new card to handValue
     }
 
     public int getHandValue(boolean showDeck) {
-        if(!showDeck) {
+        if(!showDeck) { //only show value of first card
             return hand.get(0).getValue();
-        } else {
+        } else { //show value of all cards combined
             return handValue;
         }
         
